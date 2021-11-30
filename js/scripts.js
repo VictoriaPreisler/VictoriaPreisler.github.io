@@ -6,3 +6,11 @@ hamburgerMenu.addEventListener("click", () => {
   topnavLinks.classList.toggle("--visible");
   bodyTag.classList.toggle("--disable-scroll");
 });
+
+// dismiss open mobile menu on selection (ie click)
+topnavLinks.addEventListener("click", () => {
+  if (topnavLinks.classList.contains("--visible")) {
+    topnavLinks.classList.toggle("--visible");
+    bodyTag.classList.toggle("--disable-scroll");
+  }
+});
