@@ -1,0 +1,994 @@
+:root {
+  --clr-primary-red: hsl(3, 47%, 50%);
+  --clr-primary-blue: hsl(266, 74%, 29%);
+  --clr-primary-green: hsl(173, 74%, 29%);
+  --clr-primary-black: hsl(0, 0%, 0%);
+  --clr-neutral-blue: hsl(197, 67%, 96%);
+  --fs-400: 1rem;
+  --fs-600: 2rem;
+  --fs-800: 2.5rem;
+  --ff-body: "Mali", cursive;
+  --ff-hero: "Mystery Quest", cursive;
+  --section-spacer: 4.5rem;
+}
+
+@media (min-width: 48em) {
+  :root {
+    --fs-600: 2.5rem;
+    --fs-800: 3.5rem;
+  }
+}
+
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type="button"] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  color: var(--clr-primary-black);
+}
+
+h1 {
+  font-family: var(--ff-hero);
+  font-size: var(--fs-800);
+  line-height: 1.5em;
+  color: #5044bb;
+}
+
+h2 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-600);
+  line-height: var(--fs-600);
+  color: var(--clr-primary-black);
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--clr-primary-red);
+  background-color: var(--clr-primary-red);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #44a3bb;
+  border: 1px solid #44a3bb;
+}
+
+.btn--blue {
+  background-color: #44a3bb;
+  border: 1px solid #44a3bb;
+}
+
+.btn--blue:hover {
+  background-color: var(--clr-primary-blue);
+  border: 1px solid var(--clr-primary-blue);
+}
+
+.--visible .btn {
+  background-color: #44a3bb;
+  border: 1px solid #44a3bb;
+}
+
+.--visible .btn:hover {
+  background-color: var(--clr-primary-blue);
+  border: 1px solid var(--clr-primary-blue);
+}
+
+.content-wrapper {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.neutral-background {
+  background-color: var(--clr-neutral-blue);
+}
+
+.gradient-background {
+  padding-top: var(--section-spacer);
+  padding-bottom: var(--section-spacer);
+  background-color: var(--clr-primary-green);
+}
+
+header {
+  background-color: var(--clr-neutral-blue);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hamburger-menu {
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.hamburger-menu > .bar {
+  background-color: black;
+  height: 2px;
+}
+
+.topnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.topnav > a {
+  line-height: 0;
+}
+
+.topnav .logo {
+  height: 32px;
+  width: 34px;
+}
+
+.topnav__list {
+  display: none;
+}
+
+.topnav__list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.topnav__list ul:first-child {
+  padding-top: 2rem;
+}
+
+.topnav__list li {
+  width: calc(100% - 3rem);
+  padding-bottom: 1.5rem;
+}
+
+.topnav__list li a {
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  display: block;
+  padding: 0.75rem;
+}
+
+.topnav__list li a:hover {
+  text-decoration: underline;
+}
+
+.topnav__list.--visible {
+  display: block;
+  position: absolute;
+  background-color: var(--clr-primary-red);
+  z-index: 2;
+  top: 3.5rem;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 100vh;
+}
+
+@media (min-width: 48em) {
+  .hamburger-menu {
+    display: none;
+  }
+  .topnav__list {
+    display: block;
+  }
+  .topnav__list ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .topnav__list ul:first-child {
+    padding-top: 0;
+  }
+  .topnav__list li {
+    width: auto;
+    padding: 0;
+    margin-right: 1.5rem;
+  }
+  .topnav__list li a {
+    padding: 0;
+    color: var(--clr-primary-black);
+    max-width: 11ch;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding-top: calc(var(--section-spacer) - 3.5rem);
+  padding-bottom: var(--section-spacer);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.hero img {
+  max-width: 327px;
+  padding-bottom: 2rem;
+  height: auto;
+}
+
+.hero__text h1 {
+  width: 15ch;
+  margin-bottom: 2rem;
+  height: auto;
+}
+
+@media (min-width: 54em) {
+  .hero {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .hero img {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .hero h1 {
+    margin-left: 1rem;
+  }
+}
+
+.powell-pics {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.powell-pics img:nth-child(2n) {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .powell-pics {
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: none;
+    grid-template-rows: none;
+    gap: 2rem;
+  }
+  .powell-pics img:nth-child(2n) {
+    display: inline;
+  }
+}
+
+.about-book {
+  padding-top: var(--section-spacer);
+  padding-bottom: var(--section-spacer);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.about-book__text {
+  max-width: 38ch;
+}
+
+.about-book__text p {
+  padding-bottom: 1rem;
+}
+
+.about-book__text p:last-of-type {
+  padding-bottom: 2rem;
+}
+
+.about-book img {
+  width: 100%;
+  max-width: 35rem;
+}
+
+@media (min-width: 48em) {
+  .about-book {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    min-height: 80vh;
+  }
+  .about-book__text {
+    text-align: left;
+    margin-right: 1.5rem;
+  }
+  .about-book__text p:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.reviews-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.reviews-container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: var(--clr-neutral-blue);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 24rem;
+}
+
+.reviews-container .card > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.reviews-container .card__row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.reviews-container .card__row1 .user-icon {
+  max-height: 32px;
+  max-width: 32px;
+  line-height: 0;
+}
+
+.reviews-container .card__row1 .user-name {
+  margin-left: 0.5rem;
+}
+
+.reviews-container .card__row2 {
+  max-height: 1em;
+  width: 96px;
+}
+
+.reviews-container .card .card__title {
+  font-weight: bold;
+}
+
+@media (min-width: 48em) {
+  .reviews-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .reviews-container .card {
+    margin-bottom: 0;
+  }
+  .reviews-container .card:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+.our-goals {
+  padding-top: var(--section-spacer);
+  padding-bottom: calc(var(--section-spacer) + 1rem);
+}
+
+.our-goals__text {
+  max-width: 31rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.our-goals__text p,
+.our-goals__text li {
+  padding-bottom: 1rem;
+}
+
+.our-goals__imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.our-goals__imgs .polaroid {
+  background: #fff;
+  padding: 2rem;
+  -webkit-box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  max-width: 20rem;
+}
+
+.our-goals__imgs .polaroid:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.our-goals__imgs .polaroid:first-child,
+.our-goals__imgs .polaroid:last-child {
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+
+.our-goals__imgs .polaroid:nth-child(2n) {
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+.our-goals__imgs .polaroid .caption {
+  text-align: center;
+  -webkit-transform: translateY(0.75rem);
+  transform: translateY(0.75rem);
+}
+
+@media (min-width: 48em) {
+  .our-goals {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .our-goals__text {
+    text-align: left;
+    margin: 0;
+  }
+  .our-goals__imgs {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .our-goals__imgs .polaroid:not(:last-child) {
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+.about-author-content {
+  padding-top: var(--section-spacer);
+  padding-bottom: var(--section-spacer);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-author-content p {
+  padding-bottom: 1rem;
+}
+
+.about-author-content p:last-of-type {
+  padding-bottom: 2rem;
+}
+
+.about-author-content a {
+  margin-bottom: 2rem;
+}
+
+.about-author-content img {
+  width: 100%;
+  height: auto;
+  max-width: 22rem;
+  border-radius: 50%;
+}
+
+.about-author-content .about-author__text {
+  max-width: 44ch;
+}
+
+@media (min-width: 48em) {
+  .about-author-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    text-align: left;
+  }
+  .about-author-content a {
+    margin-bottom: 0;
+  }
+  .about-author-content .about-author__text {
+    margin-left: 1.5rem;
+  }
+}
+
+.special-thanks-background {
+  background-color: var(--clr-neutral-blue);
+}
+
+.special-thanks-content {
+  padding-top: var(--section-spacer);
+  padding-bottom: var(--section-spacer);
+  text-align: center;
+}
+
+.special-thanks-content .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.special-thanks-content h2 {
+  padding-bottom: 2rem;
+}
+
+.special-thanks-content p {
+  padding-bottom: 1rem;
+}
+
+.special-thanks-content p:last-of-type {
+  padding-bottom: 0;
+}
+
+.special-thanks-content .col1,
+.special-thanks-content .col2 {
+  border: 1px solid black;
+  padding: 1rem;
+  max-width: 40ch;
+}
+
+.special-thanks-content .col1:not(:last-child),
+.special-thanks-content .col2:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 48em) {
+  .special-thanks-content .flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+  .special-thanks-content .flex .col1,
+  .special-thanks-content .flex .col2 {
+    margin-bottom: 0;
+  }
+}
+
+footer {
+  background-color: var(--clr-primary-green);
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
