@@ -3,7 +3,7 @@
   --clr-primary-blue: hsl(266, 74%, 29%);
   --clr-primary-green: hsl(173, 74%, 29%);
   --clr-primary-black: hsl(0, 0%, 0%);
-  --clr-neutral-blue: hsl(197, 67%, 96%);
+  --clr-neutral-blue: hsl(226, 37%, 90%);
   --fs-400: 1rem;
   --fs-600: 2rem;
   --fs-800: 2.5rem;
@@ -465,11 +465,16 @@ header {
 
 .topnav > a {
   line-height: 0;
+  text-decoration: none;
 }
 
-.topnav .logo {
+.topnav .logo__mobile {
   height: 32px;
   width: 34px;
+}
+
+.topnav .logo__desktop {
+  display: none;
 }
 
 .topnav__list {
@@ -525,7 +530,7 @@ header {
   min-height: 100vh;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 54em) {
   .hamburger-menu {
     display: none;
   }
@@ -552,6 +557,14 @@ header {
     padding: 0;
     color: var(--clr-primary-black);
     max-width: 11ch;
+  }
+  .topnav .logo__mobile {
+    display: none;
+  }
+
+  .topnav .logo__desktop {
+    display: block;
+    padding: 0;
   }
 }
 
