@@ -475,6 +475,8 @@ header {
 
 .topnav .logo__desktop {
   display: none;
+  font-family: var(--ff-hero);
+  color: var(--clr-primary-blue);
 }
 
 .topnav__list {
