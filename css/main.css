@@ -1010,12 +1010,12 @@ footer a {
 
 video {
   margin-top: 1rem;
-  max-width: 750px;
   width: 100%;
 }
 
-/* @media (min-width: 48em) {
+@media (min-width: 48em) {
   video {
-    width: 100%;
+    width: 600px;
+    max-width: 750px;
   }
-} */
+}
